@@ -1,0 +1,849 @@
+fileFormatVersion: 2
+guid: 16a51220cba3d204580e006f70800582
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6784061406651050460
+    second: strike_effect_spritesheet_0
+  - first:
+      213: -992425503799202253
+    second: strike_effect_spritesheet_1
+  - first:
+      213: -6812015928915202843
+    second: strike_effect_spritesheet_2
+  - first:
+      213: 1909643662416544275
+    second: strike_effect_spritesheet_3
+  - first:
+      213: -4720840323979093865
+    second: strike_effect_spritesheet_4
+  - first:
+      213: -4305596930956423685
+    second: strike_effect_spritesheet_5
+  - first:
+      213: 4458820413021494445
+    second: strike_effect_spritesheet_6
+  - first:
+      213: -7893738494518806630
+    second: strike_effect_spritesheet_7
+  - first:
+      213: 5127570963363066172
+    second: strike_effect_spritesheet_8
+  - first:
+      213: -2519534710362670202
+    second: strike_effect_spritesheet_9
+  - first:
+      213: -2064931694659159076
+    second: strike_effect_spritesheet_10
+  - first:
+      213: 603870154005708200
+    second: strike_effect_spritesheet_11
+  - first:
+      213: 7797129449078521466
+    second: strike_effect_spritesheet_12
+  - first:
+      213: 1847932430215739067
+    second: strike_effect_spritesheet_13
+  - first:
+      213: 8478711129497472174
+    second: strike_effect_spritesheet_14
+  - first:
+      213: 7032932091011974948
+    second: strike_effect_spritesheet_15
+  - first:
+      213: -8662736720176677964
+    second: strike_effect_spritesheet_16
+  - first:
+      213: -8273732674548892107
+    second: strike_effect_spritesheet_17
+  - first:
+      213: 6655131147941474956
+    second: strike_effect_spritesheet_18
+  - first:
+      213: 4064600294972853564
+    second: strike_effect_spritesheet_19
+  - first:
+      213: -6709712977939730212
+    second: strike_effect_spritesheet_20
+  - first:
+      213: 6099398242844533030
+    second: strike_effect_spritesheet_21
+  - first:
+      213: 8182348079146761594
+    second: strike_effect_spritesheet_22
+  - first:
+      213: -1979733499875233867
+    second: strike_effect_spritesheet_23
+  - first:
+      213: 8170412171211359268
+    second: strike_effect_spritesheet_24
+  - first:
+      213: -4579808980124746660
+    second: strike_effect_spritesheet_25
+  - first:
+      213: -6365140619239119518
+    second: strike_effect_spritesheet_26
+  - first:
+      213: 6889750922739445972
+    second: strike_effect_spritesheet_27
+  - first:
+      213: 4782485082035201046
+    second: strike_effect_spritesheet_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 433
+        width: 37
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd96fd5e7e3d52e50800000000000000
+      internalID: 6784061406651050460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 303
+        width: 233
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33ea20c23423a32f0800000000000000
+      internalID: -992425503799202253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 451
+        width: 42
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ece4b0ba9bd671a0800000000000000
+      internalID: -6812015928915202843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 2068
+        y: 437
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3120ae11bca608a10800000000000000
+      internalID: 1909643662416544275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 2166
+        y: 446
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 798d2e7ccb43c7eb0800000000000000
+      internalID: -4720840323979093865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 2216
+        y: 468
+        width: 35
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfd845047627f34c0800000000000000
+      internalID: -4305596930956423685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 149
+        width: 178
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dac1863ba89e0ed30800000000000000
+      internalID: 4458820413021494445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 120
+        width: 281
+        height: 323
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a97316c79aec37290800000000000000
+      internalID: -7893738494518806630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 71
+        width: 386
+        height: 376
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c31fcd7cf9ac82740800000000000000
+      internalID: 5127570963363066172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 321
+        width: 67
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68bf09da780d80dd0800000000000000
+      internalID: -2519534710362670202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 335
+        width: 46
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdb356e6093e753e0800000000000000
+      internalID: -2064931694659159076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 2111
+        y: 339
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ad78f3a4b0616800800000000000000
+      internalID: 603870154005708200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 309
+        width: 126
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7eff084ce7f43c60800000000000000
+      internalID: 7797129449078521466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 35
+        width: 421
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb6fee721cc25a910800000000000000
+      internalID: 1847932430215739067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 2003
+        y: 270
+        width: 57
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eac09d2a9de6aa570800000000000000
+      internalID: 8478711129497472174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 2105
+        y: 225
+        width: 44
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 427c636897ef99160800000000000000
+      internalID: 7032932091011974948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 71
+        width: 37
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bbf223a9d6c7c780800000000000000
+      internalID: -8662736720176677964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 112
+        width: 96
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53e78f6f7fbcd2d80800000000000000
+      internalID: -8273732674548892107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 2005
+        y: 105
+        width: 51
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8270b6c486cb5c50800000000000000
+      internalID: 6655131147941474956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 142
+        width: 98
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3d0ecfde6c586830800000000000000
+      internalID: 4064600294972853564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 115
+        width: 95
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd0f21d989f42e2a0800000000000000
+      internalID: -6709712977939730212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 2416
+        y: 146
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 621e368c26a65a450800000000000000
+      internalID: 6099398242844533030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 33
+        width: 41
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7d742ed93a8d8170800000000000000
+      internalID: 8182348079146761594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 98
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bfeef5fed29684e0800000000000000
+      internalID: -1979733499875233867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 2397
+        y: 90
+        width: 48
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 424c49db492236170800000000000000
+      internalID: 8170412171211359268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 1762
+        y: 21
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c35885fff3170c0800000000000000
+      internalID: -4579808980124746660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 2043
+        y: 42
+        width: 58
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 265a7dca45a7aa7a0800000000000000
+      internalID: -6365140619239119518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 2190
+        y: 10
+        width: 42
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d0fdc4f5ff4d9f50800000000000000
+      internalID: 6889750922739445972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strike_effect_spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 2359
+        y: 29
+        width: 47
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 614205ae7dcce5240800000000000000
+      internalID: 4782485082035201046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

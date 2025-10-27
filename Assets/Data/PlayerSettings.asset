@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dcb701fdfbd2b4583dfc69e58c551c, type: 3}
+  m_Name: PlayerSettings
+  m_EditorClassIdentifier: 
+  playerAttacks:
+  - {fileID: 333762598241579247, guid: df0e024a03c10344190e3f31c2625cf9, type: 3}
+  - {fileID: 7739999787199551570, guid: bc4c5fcc84d2ede4d9d4a5322f895e6b, type: 3}
+  slashCooldown: 0.4
+  slashDamage: 10
+  slashSize: 0.2
+  punchCooldown: 2
+  punchDamage: 30
+  punchSize: 0.6
+  Jump: 32
+  Left: 276
+  Right: 275
+  SlashAttack: 99
+  PunchAttack: 120
+  Speed: 10
+  JumpSpeed: 25000
+  GravityScaleJump: 5
+  GravityScaleFall: 8
+  GravityScaleDead: 0

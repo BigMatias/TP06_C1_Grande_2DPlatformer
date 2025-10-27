@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="508.07666"
+   height="512"
+   viewBox="0 0 134.42861 135.46667"
+   version="1.1"
+   id="svg23489"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="punch_action_spritesheet.svg">
+  <defs
+     id="defs23483">
+    <filter
+       inkscape:collect="always"
+       id="filter4362"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.46758318"
+         id="feGaussianBlur4364" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter4382"
+       x="-0.020819252"
+       width="1.0416385"
+       y="-0.13292411"
+       height="1.2658482"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.95674149"
+         id="feGaussianBlur4384" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter4390"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.1453489"
+         id="feGaussianBlur4392" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter4394"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.99582983"
+         id="feGaussianBlur4396" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter4402"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.1936347"
+         id="feGaussianBlur4404" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter4406"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.2182047"
+         id="feGaussianBlur4408" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#2b2e30"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49304414"
+     inkscape:cx="673.93331"
+     inkscape:cy="-78.255654"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:pagecheckerboard="false"
+     showborder="true"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:showpageshadow="false"
+     guidetolerance="28"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid24034"
+       spacingx="1px"
+       spacingy="1px"
+       empspacing="8"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       originx="7033.8528px"
+       originy="-1606.347px" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata23486">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+        <cc:license
+           rdf:resource="" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Robert Brooks</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(1861.0402,263.47933)">
+    <g
+       id="g4410"
+       inkscape:export-filename="C:\Users\rober\Desktop\assets\ASSETS_2024\ESSENTIALS\sword_effects\punch_action\SVG\punch_action_01.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         gds_switchable="blur"
+         gds_color="blur"
+         id="path3962-6"
+         d="m -1814.1073,-201.28723 c 0,0 -31.7522,0.68849 -31.7522,1.06359 0,0.37512 31.7522,1.06362 31.7522,1.06362 0.5626,0.008 1.0796,-0.55806 1.0796,-1.06362 0,-0.50555 -0.517,-1.0716 -1.0796,-1.06359 z m 11.6516,6.91741 c 0,0 -42.756,0.6216 -42.756,0.95964 0,0.33806 42.756,0.95964 42.756,0.95964 0.507,0.007 0.9757,-0.50403 0.9757,-0.95964 0,-0.4556 -0.4687,-0.96685 -0.9757,-0.95964 z m -19.8046,6.4256 c -0.038,0.001 -0.079,0.005 -0.116,0.012 -7.5332,0.16459 -15.0657,0.35324 -22.5955,0.63576 -1.0125,0.0613 -2.0268,0.0876 -3.0349,0.20391 -0.2336,0.11176 -0.2686,0.5623 0.04,0.5838 0.4936,0.13894 1.0162,0.0474 1.5194,0.13194 3.4131,0.17269 6.8278,0.30214 10.2442,0.38386 4.4812,0.0791 8.9581,0.24051 13.439,0.32788 0.4708,0.008 1.062,0.0953 1.3675,-0.34787 0.4269,-0.43933 0.4322,-1.3081 -0.112,-1.66337 -0.1941,-0.15827 -0.482,-0.27637 -0.7517,-0.26791 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#00ccff;stroke-width:0.5291667;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter4362);enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+         inkscape:connector-curvature="0" />
+      <g
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\rober\Desktop\assets\ASSETS_2024\ESSENTIALS\sword_effects\punch_action\1.png"
+         transform="matrix(0.48359886,0,0,0.48359886,-1238.205,-66.105886)"
+         id="g4234">
+        <rect
+           y="-408.13464"
+           x="-1287.9171"
+           height="280.12198"
+           width="277.97546"
+           id="rect4199"
+           style="opacity:0;color:#000000;fill:#800080;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:20;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+        <g
+           id="g4162"
+           style="fill:#ff0000"
+           transform="translate(300.514,0)">
+          <path
+             id="path3962"
+             transform="matrix(0.26458334,0,0,0.26458334,-6.3049604e-6,18.562493)"
+             d="m -5636.7188,-1126.6562 c 0,0 -248.1562,5.3808 -248.1562,8.3124 0,2.9317 248.1562,8.3126 248.1562,8.3126 4.3972,0.062 8.4376,-4.3615 8.4376,-8.3126 0,-3.9511 -4.0404,-8.375 -8.4376,-8.3124 z m 91.0626,54.0624 c 0,0 -334.1563,4.8581 -334.1563,7.5 0,2.6421 334.1563,7.5 334.1563,7.5 3.9624,0.056 7.625,-3.9392 7.625,-7.5 0,-3.5607 -3.6626,-7.5563 -7.625,-7.5 z m -154.7813,50.2188 c -0.3011,0.01 -0.6142,0.042 -0.9063,0.094 -58.8755,1.2863 -117.7449,2.7607 -176.5937,4.9687 -7.9128,0.4789 -15.8399,0.685 -23.7187,1.5937 -1.8263,0.8734 -2.0993,4.3946 0.3124,4.5626 3.8578,1.0859 7.9421,0.3705 11.875,1.0312 26.6741,1.3496 53.3617,2.3613 80.0626,3 35.0222,0.6183 70.0112,1.8797 105.0312,2.5625 3.6797,0.061 8.3,0.7449 10.6875,-2.7187 3.3366,-3.4336 3.3777,-10.2234 -0.875,-13 -1.5173,-1.2369 -3.7676,-2.1599 -5.875,-2.0938 z"
+             style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#00ffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
