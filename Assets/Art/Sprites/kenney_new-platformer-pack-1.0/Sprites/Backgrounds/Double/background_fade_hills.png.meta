@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      background_fade_hills_0: -7057455364940264851
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

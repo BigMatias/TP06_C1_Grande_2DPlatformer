@@ -289,7 +289,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      strike_04_0: 6147561772435768246
+      strike_04_1: -6362487661236076011
+      strike_04_2: 4354396820293710119
+      strike_04_3: -9220496560160959971
+      strike_04_4: 3583104595930311398
+      strike_04_5: -242444822905983808
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

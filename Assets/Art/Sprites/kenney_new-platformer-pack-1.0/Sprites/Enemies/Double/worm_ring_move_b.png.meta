@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      worm_ring_move_b_0: -2171563112556244067
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

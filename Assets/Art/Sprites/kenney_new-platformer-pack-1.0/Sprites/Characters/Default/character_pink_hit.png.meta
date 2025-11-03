@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      character_pink_hit_0: 5385483027099229956
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -9,6 +9,8 @@ public class LayersEnum : MonoBehaviour
         Player = 8,
         Enemy = 9,
         SlashAttack = 10,
-        PunchAttack = 11
+        PunchAttack = 11,
+        Door = 12,
+        FallDeadPoint = 15
     }
 }

@@ -985,7 +985,42 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      punch_blast_spritesheet_0: 4795464669260266827
+      punch_blast_spritesheet_1: 132130165273607542
+      punch_blast_spritesheet_10: 5573142072502558032
+      punch_blast_spritesheet_11: -4775045894727649834
+      punch_blast_spritesheet_12: 6634103699575483024
+      punch_blast_spritesheet_13: -6018400925595534254
+      punch_blast_spritesheet_14: 7116968302207116471
+      punch_blast_spritesheet_15: 5360776809060977721
+      punch_blast_spritesheet_16: -8275958430788205698
+      punch_blast_spritesheet_17: -5600694638576227131
+      punch_blast_spritesheet_18: -5306594453535096818
+      punch_blast_spritesheet_19: -2087920989984325164
+      punch_blast_spritesheet_2: -9073807621556724854
+      punch_blast_spritesheet_20: -5636093270508827409
+      punch_blast_spritesheet_21: -3294015657768253578
+      punch_blast_spritesheet_22: 2923257707592128250
+      punch_blast_spritesheet_23: -4954605685002818013
+      punch_blast_spritesheet_24: 4688460581409477120
+      punch_blast_spritesheet_25: 8505898131439315766
+      punch_blast_spritesheet_26: -4042712196915028545
+      punch_blast_spritesheet_27: -2021349134029834587
+      punch_blast_spritesheet_28: -8625100561895681046
+      punch_blast_spritesheet_29: -2336787549001469569
+      punch_blast_spritesheet_3: 1580981065272474485
+      punch_blast_spritesheet_30: -5292170855746033059
+      punch_blast_spritesheet_31: -6357240065694562807
+      punch_blast_spritesheet_32: 6737158762363204459
+      punch_blast_spritesheet_33: -8590441090636061818
+      punch_blast_spritesheet_34: 2784823570086774890
+      punch_blast_spritesheet_4: -275199733506136498
+      punch_blast_spritesheet_5: 122318499272192523
+      punch_blast_spritesheet_6: 621129889592503916
+      punch_blast_spritesheet_7: -3605816166076535484
+      punch_blast_spritesheet_8: 767526500772291757
+      punch_blast_spritesheet_9: -1599172602482542555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

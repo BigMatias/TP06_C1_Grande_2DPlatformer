@@ -409,7 +409,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      punch_blast_07_0: -1644570338929450159
+      punch_blast_07_1: -8412421263190060470
+      punch_blast_07_10: 8267115402832057974
+      punch_blast_07_2: -8000040258005662958
+      punch_blast_07_3: -5781989471143317058
+      punch_blast_07_4: -6300154991043185633
+      punch_blast_07_5: -8802897214443906832
+      punch_blast_07_6: -2138227277328276379
+      punch_blast_07_7: -7653966011512631044
+      punch_blast_07_8: 8306982855013090401
+      punch_blast_07_9: 3694738900819117564
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

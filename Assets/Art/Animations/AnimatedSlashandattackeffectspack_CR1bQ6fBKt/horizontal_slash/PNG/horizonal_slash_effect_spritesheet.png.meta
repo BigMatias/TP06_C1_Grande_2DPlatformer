@@ -265,7 +265,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      horizonal_slash_effect_spritesheet_0: 2938128910277298149
+      horizonal_slash_effect_spritesheet_1: -1112461361199447754
+      horizonal_slash_effect_spritesheet_2: -7325136228688527614
+      horizonal_slash_effect_spritesheet_3: -781023778157886875
+      horizonal_slash_effect_spritesheet_4: -6280944091671748366
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

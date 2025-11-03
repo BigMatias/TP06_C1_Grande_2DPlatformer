@@ -15,19 +15,26 @@ MonoBehaviour:
   playerAttacks:
   - {fileID: 333762598241579247, guid: df0e024a03c10344190e3f31c2625cf9, type: 3}
   - {fileID: 7739999787199551570, guid: bc4c5fcc84d2ede4d9d4a5322f895e6b, type: 3}
+  swooshAttackSound: {fileID: 8300000, guid: 1a940e5fad0fdd64891d1f3f5ca1ac89, type: 3}
+  slashAttackConnected: {fileID: 8300000, guid: d2797e9265ec2ba45aa48634afee10c3, type: 3}
+  punchAttackConnected: {fileID: 8300000, guid: cc0d537fe0c169749bd1d0870cb774fa, type: 3}
+  uppercutAttackConnected: {fileID: 8300000, guid: 999aad6368f80e145a5b0bd8c13cdf25, type: 3}
   slashCooldown: 0.4
-  slashDamage: 10
+  slashDamage: 1
   slashSize: 0.2
-  punchCooldown: 2
-  punchDamage: 30
+  punchCooldown: 5
+  punchDamage: 2
   punchSize: 0.6
   Jump: 32
   Left: 276
   Right: 275
+  Down: 274
   SlashAttack: 99
   PunchAttack: 120
+  UppercutAttack: 122
   Speed: 10
   JumpSpeed: 25000
   GravityScaleJump: 5
   GravityScaleFall: 8
   GravityScaleDead: 0
+  InvulnerabilityAfterHit: 1

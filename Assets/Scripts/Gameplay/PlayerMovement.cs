@@ -6,13 +6,15 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private PlayerDataSo playerDataSo;
-    [SerializeField] private AudioClip[] audioClips;
+    [SerializeField] private AudioClip playerHitAudio;
+    [SerializeField] private AudioClip playerDeadAudio;
+    [SerializeField] private AudioClip playerJumpAudio;
 
     [Header("Ground check")]
     [SerializeField] private Transform groundCheck;
     private float groundRadius = 0.2f;
 
-    public static event Action playerDied;
+    public static event Action onPlayerDied;
 
     private Rigidbody2D rb;
     private BoxCollider2D playerCollider;
@@ -21,19 +23,41 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private SpriteRenderer sprite;
     private GameObject[] attacks;
+
     private bool isSlashOnCd;
     private bool isPunchOnCd;
     private bool wasHit;
+    private bool isInvulnerable;
+
+    private bool keyBluePickedUp = false;
+    private bool keyRedPickedUp = false;
+    private bool keyGreenPickedUp = false;
+    private bool keyYellowPickedUp = false;
+
+    private bool doorOpened = false;
+    public static event Action onFinishedGame;
+
+    public static event Action onLockBlueOpened;
+    public static event Action onLockRedOpened;
+    public static event Action onLockGreenOpened;
+    public static event Action onLockYellowOpened;
+    public static event Action onAllLocksOpened;
+
+    private int enemyLayerMask = 1 << (int)LayersEnum.Layers.Enemy;
 
     [SerializeField] private LayerMask groundLayer;
 
     private static readonly int State = Animator.StringToHash("State");
+
     enum PlayerState
     {
         Idle,
         Jump,
         Run,
-        Hit
+        Hit,
+        RunHit,
+        JumpHit,
+        IdleHit
     }
 
     [SerializeField] private PlayerState playerState = PlayerState.Idle;
@@ -45,6 +69,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        KeyYellow.onKeyYellowPickedUp += KeyYellow_onKeyYellowPickedUp;
+        KeyBlue.onKeyBluePickedUp += KeyBlue_onKeyBluePickedUp;
+        KeyGreen.onKeyGreenPickedUp += KeyGreen_onKeyGreenPickedUp;
+        KeyRed.onKeyRedPickedUp += KeyRed_onKeyRedPickedUp;
+
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.onDie += HealthSystem_onDie;
         rb = GetComponent<Rigidbody2D>();
@@ -53,11 +82,6 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         attacks = new GameObject[2];
-    }
-
-    private void OnDestroy()
-    {
-        healthSystem.onDie -= HealthSystem_onDie;
     }
 
     private void Start()
@@ -77,13 +101,29 @@ public class PlayerMovement : MonoBehaviour
         }
         if (!IsGrounded() && !wasHit)
         {
-            playerState = PlayerState.Jump;
-            animator.SetInteger(State, (int)playerState);
+            if (isInvulnerable)
+            {
+                playerState = PlayerState.JumpHit;
+                animator.SetInteger(State, (int)playerState);
+            }
+            else if (!isInvulnerable)
+            {
+                playerState = PlayerState.Jump;
+                animator.SetInteger(State, (int)playerState);
+            }
         }
         if (IsGrounded() && rb.velocity.x == 0 && !wasHit)
         {
-            playerState = PlayerState.Idle;
-            animator.SetInteger(State, (int)playerState);
+            if (isInvulnerable)
+            {
+                playerState = PlayerState.IdleHit;
+                animator.SetInteger(State, (int)playerState);
+            }
+            else if (!isInvulnerable)
+            {
+                playerState = PlayerState.Idle;
+                animator.SetInteger(State, (int)playerState);
+            }
         }
 
     }
@@ -94,6 +134,37 @@ public class PlayerMovement : MonoBehaviour
         {
             MovePlayer();
         }
+    }
+
+
+
+    private void OnDestroy()
+    {
+        KeyYellow.onKeyYellowPickedUp -= KeyYellow_onKeyYellowPickedUp;
+        KeyBlue.onKeyBluePickedUp -= KeyBlue_onKeyBluePickedUp;
+        KeyGreen.onKeyGreenPickedUp -= KeyGreen_onKeyGreenPickedUp;
+        KeyRed.onKeyRedPickedUp -= KeyRed_onKeyRedPickedUp;
+
+        healthSystem.onDie -= HealthSystem_onDie;
+    }
+
+    private void KeyYellow_onKeyYellowPickedUp()
+    {
+       keyYellowPickedUp = true;
+    }
+
+    private void KeyBlue_onKeyBluePickedUp()
+    {
+        keyBluePickedUp = true;
+    }
+
+    private void KeyGreen_onKeyGreenPickedUp()
+    {
+        keyGreenPickedUp = true;
+    }
+    private void KeyRed_onKeyRedPickedUp()
+    {
+        keyRedPickedUp = true;
     }
 
     private void InstantiateAttacks()
@@ -120,15 +191,37 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(playerDataSo.Left))
         {
             sprite.flipX = true;
-            playerState = PlayerState.Run;
-            animator.SetInteger(State, (int)playerState);
+            if (IsGrounded())
+            {
+                if (isInvulnerable)
+                {
+                    playerState = PlayerState.RunHit;
+                    animator.SetInteger(State, (int)playerState);
+                }
+                else if (!isInvulnerable)
+                {
+                    playerState = PlayerState.Run;
+                    animator.SetInteger(State, (int)playerState);
+                }
+            }
             velocity.x = -playerDataSo.Speed;
         }
         else if (Input.GetKey(playerDataSo.Right))
         {
             sprite.flipX = false;
-            playerState = PlayerState.Run;
-            animator.SetInteger(State, (int)playerState);
+            if (IsGrounded())
+            {
+                if (isInvulnerable)
+                {
+                    playerState = PlayerState.RunHit;
+                    animator.SetInteger(State, (int)playerState);
+                }
+                else if (!isInvulnerable)
+                {
+                    playerState = PlayerState.Run;
+                    animator.SetInteger(State, (int)playerState);
+                }
+            }
             velocity.x = playerDataSo.Speed;
         }
         else
@@ -138,7 +231,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(playerDataSo.Jump) && IsGrounded())
         {
-            audioSource.PlayOneShot(audioClips[0]);
+            audioSource.PlayOneShot(playerJumpAudio);
             rb.gravityScale = playerDataSo.GravityScaleJump;
             rb.AddForce(playerDataSo.JumpSpeed * Time.fixedDeltaTime * Vector2.up);
         }
@@ -150,8 +243,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(playerDataSo.SlashAttack) && !isSlashOnCd)
         {
-
             attacks[0].SetActive(true);
+            audioSource.PlayOneShot(playerDataSo.swooshAttackSound);
             if (!sprite.flipX)
             {
                 attacks[0].transform.position = transform.position + new Vector3(1, 0, 0);
@@ -164,7 +257,6 @@ public class PlayerMovement : MonoBehaviour
                 attacks[0].transform.rotation = Quaternion.Euler(0, 0, 0);
                 attacks[0].transform.localScale = new Vector3(-playerDataSo.slashSize, playerDataSo.slashSize, playerDataSo.slashSize);
             }
-            
 
             if (!IsGrounded() && Input.GetKey(playerDataSo.Down))
             {
@@ -177,6 +269,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(playerDataSo.PunchAttack) && !isPunchOnCd)
         {
+            audioSource.PlayOneShot(playerDataSo.swooshAttackSound);
+
             attacks[1].SetActive(true);
             if (!sprite.flipX)
             {
@@ -210,8 +304,62 @@ public class PlayerMovement : MonoBehaviour
 
     private void HealthSystem_onDie()
     {
-        audioSource.PlayOneShot(audioClips[1]);
-        playerDied?.Invoke();
+        audioSource.PlayOneShot(playerDeadAudio);
+        onPlayerDied?.Invoke();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        switch (collision.gameObject.name)
+        {
+            case "LockYellow":
+                {
+                    if (keyYellowPickedUp)
+                    {
+                        onLockYellowOpened?.Invoke();
+                    }
+                    break;
+                }
+            case "LockBlue":
+                {
+                    if (keyBluePickedUp)
+                    {
+                        onLockBlueOpened?.Invoke();
+                    }
+                    break;
+                }
+            case "LockGreen":
+                {
+                    if (keyGreenPickedUp)
+                    {
+                        onLockGreenOpened?.Invoke();
+                    }
+                    break;
+                }
+            case "LockRed":
+                {
+                    if (keyRedPickedUp)
+                    {
+                        onLockRedOpened?.Invoke();
+                    }
+                    break;
+                }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == (int)LayersEnum.Layers.Door)
+        {
+            if (doorOpened)
+            {
+                onFinishedGame?.Invoke(); 
+            }
+        }
+        if (collision.gameObject.layer == (int)LayersEnum.Layers.FallDeadPoint)
+        {
+            onPlayerDied?.Invoke(); 
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -228,7 +376,10 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator WasHit(Transform enemyTransform)
     {
+        audioSource.PlayOneShot(playerHitAudio);
+
         wasHit = true;
+        isInvulnerable = true;
         float direction = (transform.position.x - enemyTransform.position.x) >= 0 ? 1f : -1f;
         rb.velocity = Vector2.zero;
         float knockbackForceX = 8f; 
@@ -238,12 +389,16 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(knockbackDir, ForceMode2D.Impulse);
         playerState = PlayerState.Hit;
         animator.SetInteger(State, (int)playerState);
-        playerCollider.excludeLayers = (int)LayersEnum.Layers.Enemy;
+        rb.excludeLayers = enemyLayerMask;
         yield return new WaitForSeconds(0.3f);
         wasHit = false;
-        yield return new WaitForSeconds(1f);
-        playerCollider.excludeLayers = (int)LayersEnum.Layers.Nothing;
+        yield return new WaitForSeconds(playerDataSo.InvulnerabilityAfterHit);
+        isInvulnerable = false;
+        rb.excludeLayers = (int)LayersEnum.Layers.Nothing;
         
     }
+
+
+
 
 }

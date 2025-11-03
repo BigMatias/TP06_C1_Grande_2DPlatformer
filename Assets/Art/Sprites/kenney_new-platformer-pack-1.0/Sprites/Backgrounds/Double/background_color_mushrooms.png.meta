@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      background_color_mushrooms_0: 5748026917980691217
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

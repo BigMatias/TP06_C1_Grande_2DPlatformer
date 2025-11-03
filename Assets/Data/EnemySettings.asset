@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0911f2a7c619047bd7ecb6724e04b5, type: 3}
   m_Name: EnemySettings
   m_EditorClassIdentifier: 
+  coin: {fileID: 7003634189290043834, guid: 4a5e20e05074e5b4396905f15fe267e0, type: 3}
+  EnemyDead: {fileID: 8300000, guid: 440ee9e9737453445ac203adb06c6648, type: 3}
   EnemyDamage: 1
   EnemySpeed: 3
   DistanceOnSurveillance: 4

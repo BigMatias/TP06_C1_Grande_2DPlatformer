@@ -529,7 +529,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      slash_effect_spritesheet_0: -7860806500146621538
+      slash_effect_spritesheet_1: -2107261262849948284
+      slash_effect_spritesheet_10: -6536097682425135956
+      slash_effect_spritesheet_11: 2434301230465710486
+      slash_effect_spritesheet_12: -4324862296708855870
+      slash_effect_spritesheet_13: -573254711797677643
+      slash_effect_spritesheet_14: 6675470095990911129
+      slash_effect_spritesheet_15: -5059263305333704508
+      slash_effect_spritesheet_2: 3180309824324080175
+      slash_effect_spritesheet_3: -7401180557270445329
+      slash_effect_spritesheet_4: 6134194400849843173
+      slash_effect_spritesheet_5: -1026531279573234536
+      slash_effect_spritesheet_6: -6945267180835493379
+      slash_effect_spritesheet_7: 8071418628844377863
+      slash_effect_spritesheet_8: 6999549261325824256
+      slash_effect_spritesheet_9: -1762023005964853700
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

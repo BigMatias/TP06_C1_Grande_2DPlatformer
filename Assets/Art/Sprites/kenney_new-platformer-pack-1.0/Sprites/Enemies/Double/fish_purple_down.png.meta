@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fish_purple_down_0: 1867497785362419027
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -60,6 +60,7 @@ public class MoveBlock : MonoBehaviour
         }
 
     }
+
     private void EnemyVisionRange_onPlayerSighted(bool sighted)
     {
         playerSighted = sighted;

@@ -841,7 +841,36 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      strike_effect_spritesheet_0: 6784061406651050460
+      strike_effect_spritesheet_1: -992425503799202253
+      strike_effect_spritesheet_10: -2064931694659159076
+      strike_effect_spritesheet_11: 603870154005708200
+      strike_effect_spritesheet_12: 7797129449078521466
+      strike_effect_spritesheet_13: 1847932430215739067
+      strike_effect_spritesheet_14: 8478711129497472174
+      strike_effect_spritesheet_15: 7032932091011974948
+      strike_effect_spritesheet_16: -8662736720176677964
+      strike_effect_spritesheet_17: -8273732674548892107
+      strike_effect_spritesheet_18: 6655131147941474956
+      strike_effect_spritesheet_19: 4064600294972853564
+      strike_effect_spritesheet_2: -6812015928915202843
+      strike_effect_spritesheet_20: -6709712977939730212
+      strike_effect_spritesheet_21: 6099398242844533030
+      strike_effect_spritesheet_22: 8182348079146761594
+      strike_effect_spritesheet_23: -1979733499875233867
+      strike_effect_spritesheet_24: 8170412171211359268
+      strike_effect_spritesheet_25: -4579808980124746660
+      strike_effect_spritesheet_26: -6365140619239119518
+      strike_effect_spritesheet_27: 6889750922739445972
+      strike_effect_spritesheet_28: 4782485082035201046
+      strike_effect_spritesheet_3: 1909643662416544275
+      strike_effect_spritesheet_4: -4720840323979093865
+      strike_effect_spritesheet_5: -4305596930956423685
+      strike_effect_spritesheet_6: 4458820413021494445
+      strike_effect_spritesheet_7: -7893738494518806630
+      strike_effect_spritesheet_8: 5127570963363066172
+      strike_effect_spritesheet_9: -2519534710362670202
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

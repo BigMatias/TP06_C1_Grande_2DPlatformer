@@ -17,11 +17,11 @@ TagManager:
   - Enemy
   - SlashAttack
   - PunchAttack
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Coin
+  - Door
+  - MiniMap
+  - FallDeadPoint
+  - EnemyVision
   - 
   - 
   - 

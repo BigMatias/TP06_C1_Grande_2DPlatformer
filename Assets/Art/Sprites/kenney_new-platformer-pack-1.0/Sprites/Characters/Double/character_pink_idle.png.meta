@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      character_pink_idle_0: -1299002456533753899
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

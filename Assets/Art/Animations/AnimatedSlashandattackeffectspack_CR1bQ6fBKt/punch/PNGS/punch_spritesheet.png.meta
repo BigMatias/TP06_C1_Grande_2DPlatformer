@@ -865,7 +865,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      punch_spritesheet_0: -8617068137880882421
+      punch_spritesheet_1: -8012969141316027939
+      punch_spritesheet_10: -2723289664890266431
+      punch_spritesheet_11: 5296740942150700614
+      punch_spritesheet_12: 7712200236654818934
+      punch_spritesheet_13: 2702240926790245877
+      punch_spritesheet_14: -7155979471857026
+      punch_spritesheet_15: 8682783575664148354
+      punch_spritesheet_16: 6272765754847348398
+      punch_spritesheet_17: -6806566100730635618
+      punch_spritesheet_18: 4491682693096710271
+      punch_spritesheet_19: -6842728853495433490
+      punch_spritesheet_2: -502067744608321309
+      punch_spritesheet_20: -940675066823404108
+      punch_spritesheet_21: 6418163303764124883
+      punch_spritesheet_22: -9066880836757413603
+      punch_spritesheet_23: -2289299057239752713
+      punch_spritesheet_24: -8021239830910023867
+      punch_spritesheet_25: -5732913580731386256
+      punch_spritesheet_26: -7644420158277767374
+      punch_spritesheet_27: -554547547018176937
+      punch_spritesheet_28: -5743608087213720177
+      punch_spritesheet_29: -738440786156742518
+      punch_spritesheet_3: 8245719468673968635
+      punch_spritesheet_4: 5985677156035770042
+      punch_spritesheet_5: 2395166295028691848
+      punch_spritesheet_6: 2653684181388446126
+      punch_spritesheet_7: -3090589206950185999
+      punch_spritesheet_8: -8664756543660550961
+      punch_spritesheet_9: -5463342878696657202
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

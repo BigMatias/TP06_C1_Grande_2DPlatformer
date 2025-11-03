@@ -8,19 +8,19 @@ public class UIGameOver : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Button yesBtn;
     [SerializeField] private Button noBtn;
-
+ 
     private void Awake()
     {
         yesBtn.onClick.AddListener(OnYesBtnClicked);
         noBtn.onClick.AddListener(OnNoBtnClicked);
-        PlayerMovement.playerDied += PlayerMovement_playerDied;
+        PlayerMovement.onPlayerDied += PlayerMovement_playerDied;
     }
 
     private void OnDestroy()
     {
         yesBtn.onClick.RemoveListener(OnYesBtnClicked);
         noBtn.onClick.RemoveListener(OnNoBtnClicked);
-        PlayerMovement.playerDied -= PlayerMovement_playerDied;
+        PlayerMovement.onPlayerDied -= PlayerMovement_playerDied;
     }
 
     private void OnYesBtnClicked()
@@ -38,4 +38,5 @@ public class UIGameOver : MonoBehaviour
         gameManager.PauseGame();
         gameOverPanel.gameObject.SetActive(true);
     }
+
 }

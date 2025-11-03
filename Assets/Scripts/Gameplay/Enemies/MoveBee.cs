@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
 public class MoveBee : MonoBehaviour
@@ -14,6 +13,7 @@ public class MoveBee : MonoBehaviour
 
     private bool playerSighted = false;
     private bool inUsualPathing;
+    private Vector3 initialPos;
     private Coroutine followCoroutine;
     private Coroutine returnToOriginPoint;
     private Coroutine usualPathing;
@@ -28,10 +28,9 @@ public class MoveBee : MonoBehaviour
         enemyVisionRange.onPlayerSighted += EnemyVisionRange_onPlayerSighted;
     }
 
-
-    private void OnDestroy()
+    private void Start()
     {
-        enemyVisionRange.onPlayerSighted -= EnemyVisionRange_onPlayerSighted;
+        initialPos = transform.position;
     }
 
     private void OnEnable()
@@ -44,8 +43,6 @@ public class MoveBee : MonoBehaviour
 
         if (usualPathing == null)
             usualPathing = StartCoroutine(UsualPathing());
-
-
     }
 
     private void OnDisable()
@@ -71,10 +68,21 @@ public class MoveBee : MonoBehaviour
             hitBee = null;
         }
     }
+
+    private void OnDestroy()
+    {
+        enemyVisionRange.onPlayerSighted -= EnemyVisionRange_onPlayerSighted;
+    }
+
     private void EnemyController_onEnemyHit()
     {
-        if (hitBee == null)
-            hitBee = StartCoroutine(HitBee());
+        if (hitBee != null)
+        {
+            StopCoroutine(hitBee);
+            hitBee = null;
+        }
+
+        hitBee = StartCoroutine(HitBee());
     }
 
     private void EnemyVisionRange_onPlayerSighted(bool sighted)
@@ -88,6 +96,18 @@ public class MoveBee : MonoBehaviour
         {
             if (playerSighted)
             {
+
+                float horizontalDirection = playerTransform.position.x - transform.position.x;
+
+                if (horizontalDirection > 0)
+                {
+                    transform.localScale = new Vector3(-1.3f, 1.3f, 1.3f);
+                }
+                else if (horizontalDirection < 0)
+                {
+                    transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
+                }
+
                 Vector2 newPosition = Vector2.MoveTowards(
                     transform.position,
                     playerTransform.position,
@@ -148,11 +168,12 @@ public class MoveBee : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
     }
+
     private IEnumerator HitBee()
     {
         StopCoroutine(usualPathing);
         StopCoroutine(returnToOriginPoint);
-
+        StopCoroutine(followCoroutine);
         float direction = (transform.position.x - playerTransform.position.x) >= 0 ? 1f : -1f;
 
         float knockbackDistance = 1.2f;
@@ -175,6 +196,16 @@ public class MoveBee : MonoBehaviour
         }
         usualPathing = StartCoroutine(UsualPathing());
         returnToOriginPoint = StartCoroutine(ReturnToOriginPoint());
+        followCoroutine = StartCoroutine(MoveBeeTowardsPlayer());
+        StopCoroutine(hitBee);
         rb.MovePosition(targetPos);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Vector3 startPos = initialPos + Vector3.left * enemyData.DistanceOnSurveillance;
+        Vector3 endPos = initialPos + Vector3.right * enemyData.DistanceOnSurveillance;
+        Gizmos.color = Color.red;    
+        Gizmos.DrawLine(startPos, endPos);
     }
 }

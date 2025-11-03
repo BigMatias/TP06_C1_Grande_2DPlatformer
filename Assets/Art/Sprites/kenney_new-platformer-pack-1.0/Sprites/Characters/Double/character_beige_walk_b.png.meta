@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      character_beige_walk_b_0: -5370128271410815945
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
