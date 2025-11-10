@@ -1,11 +1,11 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] EnemyData enemyDataSo;
+    [SerializeField] private EnemyDataSo enemyDataSo;
     [SerializeField] private ParticleSystem enemyDeathParticles;
+    [SerializeField] private PlayerInteractionPowerUps playerInteractionPowerUps;
 
     public event Action onEnemyHit;
     public static event Action<Transform> onPlayerHit;
@@ -15,12 +15,10 @@ public class EnemyController : MonoBehaviour
     private AudioSource audioSource;
     private HealthSystem healthSystem;
 
-    private bool invulnerabilityPickedUp;
     private Coroutine invulnerabilityPickedUpCoroutine;
 
     private void Awake ()
     {
-        PlayerInteractionPowerUps.onPowerUpPickedUp += PlayerInteractionPowerUps_onPowerUpPickedUp;
         collider = GetComponent<Collider2D>();
         audioSource = GetComponent<AudioSource>();
         healthSystem = GetComponent<HealthSystem>();
@@ -38,13 +36,8 @@ public class EnemyController : MonoBehaviour
     }
     private void OnDestroy()
     {
-        PlayerInteractionPowerUps.onPowerUpPickedUp -= PlayerInteractionPowerUps_onPowerUpPickedUp;
         healthSystem.onDamageDealt -= HealthSystem_onDamageDealt;
-    }
-    private void PlayerInteractionPowerUps_onPowerUpPickedUp(int id, float cooldownTime)
-    {
-        if (invulnerabilityPickedUpCoroutine == null && gameObject.activeSelf)
-            invulnerabilityPickedUpCoroutine = StartCoroutine(InvulnerabilityPickedUp(cooldownTime));
+        healthSystem.onDie -= HealthSystem_onDie;
     }
 
     private void HealthSystem_onDamageDealt()
@@ -87,7 +80,7 @@ public class EnemyController : MonoBehaviour
         {
             if (other.TryGetComponent(out HealthSystem healthSystem))
             {
-                if (!invulnerabilityPickedUp)
+                if (!playerInteractionPowerUps.invulnerabilityPickedUp)
                 {
                     onPlayerHit?.Invoke(gameObject.transform);
                     healthSystem.DoDamage(enemyDataSo.EnemyDamage);
@@ -96,10 +89,5 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private IEnumerator InvulnerabilityPickedUp(float duration)
-    {
-        invulnerabilityPickedUp = true;
-        yield return new WaitForSeconds(duration);
-        invulnerabilityPickedUp = false;
-    }
+
 }

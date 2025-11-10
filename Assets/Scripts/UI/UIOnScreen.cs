@@ -44,9 +44,9 @@ public class UIOnScreen : MonoBehaviour
         playerHealthSystem.onLifeUpdated -= PlayerHealthSystem_onLifeUpdated;
     }
 
-    private void Hill_onKeyBought()
+    private void Hill_onKeyBought(int keyPrice)
     {
-        coinCounter -= 30;
+        coinCounter -= keyPrice;
         coinCounterText.text = coinCounter.ToString();
     }
 

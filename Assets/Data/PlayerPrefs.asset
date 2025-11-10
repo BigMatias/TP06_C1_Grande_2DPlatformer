@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f24ef214749a8c0469dab9d73c134589, type: 3}
+  m_Script: {fileID: 11500000, guid: f103f4ce311f68b4ab8a2d02ddd37390, type: 3}
   m_Name: PlayerPrefs
   m_EditorClassIdentifier: 
-  playerCoins: 0
+  playerCoins: 281
+  currentCoins: 0

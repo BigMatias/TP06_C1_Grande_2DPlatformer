@@ -40,5 +40,5 @@ MonoBehaviour:
   GravityScaleFall: 8
   GravityScaleDead: 0
   InvulnerabilityAfterHit: 1
-  JumpQuantity: 1
+  JumpQuantity: 2
   healQuantity: 1

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] private PlayerPrefs playerPrefsSo;
+    [SerializeField] private PlayerPrefsSo playerPrefsSo;
 
     public static event Action onCoinPickedUp;
 

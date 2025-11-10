@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DeactivateAttack : MonoBehaviour
+public class DeactivateAttackSo : MonoBehaviour
 {
     public void DeactivateObject()
     {

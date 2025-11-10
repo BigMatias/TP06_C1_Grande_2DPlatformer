@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce0911f2a7c619047bd7ecb6724e04b5, type: 3}
+  m_Script: {fileID: 11500000, guid: b734e2ecb6a9a734689c9714f29d648c, type: 3}
   m_Name: EnemySettings
   m_EditorClassIdentifier: 
   coin: {fileID: 7003634189290043834, guid: 4a5e20e05074e5b4396905f15fe267e0, type: 3}

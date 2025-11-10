@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MoveMouse : MonoBehaviour
 {
-    [SerializeField] private EnemyData enemyData;
+    [SerializeField] private EnemyDataSo enemyData;
     [SerializeField] private Transform playerTransform;
 
     private EnemyController enemyController;

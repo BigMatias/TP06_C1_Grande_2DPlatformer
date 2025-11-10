@@ -1,8 +1,9 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public partial class PlayerMovement : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private PlayerDataSo playerDataSo;
@@ -47,25 +48,14 @@ public class PlayerMovement : MonoBehaviour
     public static event Action onLockRedOpened;
     public static event Action onLockGreenOpened;
     public static event Action onLockYellowOpened;
-    public static event Action onAllLocksOpened;
 
     [SerializeField] private LayerMask groundLayer;
 
     private static readonly int State = Animator.StringToHash("State");
 
-    enum PlayerState
-    {
-        Idle,
-        Jump,
-        Run,
-        Hit,
-        RunHit,
-        JumpHit,
-        IdleHit
-    }
-
     [SerializeField] private PlayerState playerState = PlayerState.Idle;
 
+    private bool wasGrounded;
     bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
@@ -104,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        bool grounded = IsGrounded();
         Fall();
         if (!wasHit)
         {
@@ -135,11 +126,12 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetInteger(State, (int)playerState);
             }
         }
-        if (IsGrounded())//&& groundTime <= 0.1)
+        if (grounded && !wasGrounded)
         {
-            Debug.Log(jumpsLeft);
             jumpsLeft = jumpQuantity;
         }
+
+        wasGrounded = grounded;
         Jump();
     }
 
@@ -182,17 +174,22 @@ public class PlayerMovement : MonoBehaviour
     {
         StartCoroutine(WasHit(enemyTransform));
     }
+
     private void PlayerInteractionPowerUps_onPowerUpPickedUp(int id, float cooldownTime)
     {
         switch (id)
         {
+            case (int)PlayerActionType.Damage:
+                powerUpPickedUp = StartCoroutine(PowerUpPickedUp((int)PlayerActionType.Damage, cooldownTime));
+                break;
             case (int)PlayerActionType.TripleJump:
-                int tripleJump = (int)PlayerActionType.TripleJump;
-                powerUpPickedUp = StartCoroutine(PowerUpPickedUp(tripleJump, cooldownTime));
+                powerUpPickedUp = StartCoroutine(PowerUpPickedUp((int)PlayerActionType.TripleJump, cooldownTime));
+                break;
+            case (int)PlayerActionType.Invulnerability:
+                powerUpPickedUp = StartCoroutine(PowerUpPickedUp((int)PlayerActionType.Invulnerability, cooldownTime));
                 break;
         }
     }
-
 
     private void KeyYellow_onKeyYellowPickedUp()
     {
@@ -417,12 +414,32 @@ public class PlayerMovement : MonoBehaviour
         switch (powerUp)
         {
             case (int)PlayerActionType.TripleJump:
-                jumpQuantity = 2;
+                jumpQuantity++;
                 yield return new WaitForSeconds(duration);
-                jumpQuantity = 1;
+                jumpQuantity--;
+                break;
+            case (int)PlayerActionType.Damage:
+                for (int i = 0; i <= attacks.Length - 1; i++)
+                {
+                    SpriteRenderer attackSprite = attacks[i].gameObject.GetComponent<SpriteRenderer>();
+                    attackSprite.color = Color.red;
+                }
+
+                yield return new WaitForSeconds(duration);
+
+                for (int i = 0; i <= attacks.Length - 1; i++)
+                {
+                    SpriteRenderer attackSprite = attacks[i].gameObject.GetComponent<SpriteRenderer>();
+                    attackSprite.color = Color.white;
+                }
+                break;
+            case (int)PlayerActionType.Invulnerability:
+                SpriteRenderer playerSprite = gameObject.GetComponent<SpriteRenderer>();
+                playerSprite.color = Color.magenta;
+                yield return new WaitForSeconds(duration);
+                playerSprite.color = Color.white;
                 break;
         }
-
     }
 
     private IEnumerator WasHit(Transform enemyTransform)

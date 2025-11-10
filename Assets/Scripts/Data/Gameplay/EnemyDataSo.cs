@@ -2,7 +2,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemySettings", menuName = "Enemy/Data")]
 
-public class EnemyData : ScriptableObject
+public class EnemyDataSo : ScriptableObject
 {
     public GameObject coin;
     public AudioClip EnemyDead;

@@ -7,7 +7,7 @@ public class CoinPool : MonoBehaviour
 
     [Header("Configuración del pool")]
     [SerializeField] private GameObject coinPrefab;
-    [SerializeField] private int initialSize = 30;
+    [SerializeField] private int initialSize;
 
     private Queue<GameObject> pool = new Queue<GameObject>();
 

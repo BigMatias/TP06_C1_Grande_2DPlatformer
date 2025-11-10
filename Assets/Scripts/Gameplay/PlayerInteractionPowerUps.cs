@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerInteractionPowerUps : MonoBehaviour
 {
-    [SerializeField] private PowerUpsData powerUpsDataSo;
+    [SerializeField] private PowerUpsDataSo powerUpsDataSo;
     [SerializeField] private PlayerDataSo playerDataSo;
 
     public static event Action<int, float> onPowerUpPickedUp;
 
     private HealthSystem healthSystem;
-    private Coroutine damagePickedUpCoroutine;
+    private Coroutine powerUpPickedUpCoroutine;
+    public bool invulnerabilityPickedUp = false;
 
     private void Awake()
     {
@@ -21,10 +22,10 @@ public class PlayerInteractionPowerUps : MonoBehaviour
 
     private void OnDisable()
     {
-        if (damagePickedUpCoroutine != null)
+        if (powerUpPickedUpCoroutine != null)
         {
-            StopCoroutine(damagePickedUpCoroutine);
-            damagePickedUpCoroutine = null;
+            StopCoroutine(powerUpPickedUpCoroutine);
+            powerUpPickedUpCoroutine = null;
         }
     }
 
@@ -37,34 +38,39 @@ public class PlayerInteractionPowerUps : MonoBehaviour
             {
                 case PlayerActionType.Invulnerability:
                     onPowerUpPickedUp?.Invoke((int)PlayerActionType.Invulnerability, powerUpsDataSo.invulnerabilityDuration);
-                    powerup.PowerUpPickedUp();
+                    powerUpPickedUpCoroutine = StartCoroutine(PowerUpPickedUp((int)PlayerActionType.Invulnerability, powerUpsDataSo.damageBuffDuration));
                     break;
-
                 case PlayerActionType.TripleJump:
                     onPowerUpPickedUp?.Invoke((int)PlayerActionType.TripleJump, powerUpsDataSo.tripleJumpDuration);
-                    powerup.PowerUpPickedUp();
                     break;
-
                 case PlayerActionType.Damage:
                     onPowerUpPickedUp?.Invoke((int)PlayerActionType.Damage, powerUpsDataSo.damageBuffDuration);
-                    if (damagePickedUpCoroutine == null)
-                        damagePickedUpCoroutine = StartCoroutine(DamagePickedUp(powerUpsDataSo.damageBuffDuration));
-                    powerup.PowerUpPickedUp();
+                    powerUpPickedUpCoroutine = StartCoroutine(PowerUpPickedUp((int)PlayerActionType.Damage, powerUpsDataSo.damageBuffDuration));
                     break;
-
                 case PlayerActionType.Health:
+                    onPowerUpPickedUp?.Invoke((int)PlayerActionType.Health, 0);
                     healthSystem.Heal(powerUpsDataSo.healthAmount);
-                    powerup.PowerUpPickedUp();
                     break;
             }
+            powerup.PowerUpPickedUp();
         }
     }
-    private IEnumerator DamagePickedUp(int duration)
+    private IEnumerator PowerUpPickedUp(int powerUp, int duration)
     {
-        playerDataSo.slashCurrentDamage += powerUpsDataSo.damageBuff;
-        playerDataSo.punchCurrentDamage += powerUpsDataSo.damageBuff;
-        yield return new WaitForSeconds(duration);
-        playerDataSo.slashCurrentDamage -= powerUpsDataSo.damageBuff;
-        playerDataSo.punchCurrentDamage -= powerUpsDataSo.damageBuff;
+        switch (powerUp)
+        {
+            case (int)PlayerActionType.Damage:
+                playerDataSo.slashCurrentDamage += powerUpsDataSo.damageBuff;
+                playerDataSo.punchCurrentDamage += powerUpsDataSo.damageBuff;
+                yield return new WaitForSeconds(duration);
+                playerDataSo.slashCurrentDamage -= powerUpsDataSo.damageBuff;
+                playerDataSo.punchCurrentDamage -= powerUpsDataSo.damageBuff;
+                break;
+            case (int)PlayerActionType.Invulnerability:
+                invulnerabilityPickedUp = true;
+                yield return new WaitForSeconds(duration);
+                invulnerabilityPickedUp = false;
+                break;
+        }
     }
 }

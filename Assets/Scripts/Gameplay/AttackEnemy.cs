@@ -3,7 +3,7 @@ using UnityEngine;
 public class AttackEnemy : MonoBehaviour
 {
     [SerializeField] private PlayerDataSo playerDataSo;
-    [SerializeField] private PowerUpsData powerUpsDataSo;
+    [SerializeField] private PowerUpsDataSo powerUpsDataSo;
     [SerializeField] private TypeOfAttack typeOfAttack;
 
     private enum TypeOfAttack

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EffectObject : MonoBehaviour
+public class EffectObjectSo : MonoBehaviour
 {
     [SerializeField] private float time;
     // Start is called before the first frame update

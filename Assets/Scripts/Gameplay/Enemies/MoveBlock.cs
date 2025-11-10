@@ -4,7 +4,7 @@ using UnityEngine;
 public class MoveBlock : MonoBehaviour
 {
     [SerializeField] private GameObject visionRange;
-    [SerializeField] private EnemyData enemyData;
+    [SerializeField] private EnemyDataSo enemyData;
     [SerializeField] private Transform playerTransform;
 
     private EnemyVisionRange enemyVisionRange;

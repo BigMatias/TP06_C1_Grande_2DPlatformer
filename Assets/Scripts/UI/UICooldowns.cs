@@ -9,12 +9,22 @@ public partial class UICooldowns : MonoBehaviour
     void Awake()
     {
         PlayerMovement.onPlayerPunch += PlayerMovement_onPlayerPunch;
-        PlayerInteractionPowerUps.onPowerUpPickedUp += PlayerInteractionPowerUps_onPowerUpPickedUp; ;
+        PlayerInteractionPowerUps.onPowerUpPickedUp += PlayerInteractionPowerUps_onPowerUpPickedUp;
+    }
+
+    private void Start()
+    {
         for (int i = 0; i < cooldownImage.Length; i++)
         {
             cooldownImage[i].gameObject.SetActive(false);
             cooldownImage[i].fillAmount = 0;
         }
+    }
+
+    private void OnDestroy()
+    {
+        PlayerMovement.onPlayerPunch -= PlayerMovement_onPlayerPunch;
+        PlayerInteractionPowerUps.onPowerUpPickedUp -= PlayerInteractionPowerUps_onPowerUpPickedUp;
     }
 
     private void PlayerInteractionPowerUps_onPowerUpPickedUp(int id, float cooldownTime)

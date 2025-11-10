@@ -2,7 +2,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "PickablesSettings", menuName = "Pickables/Data")]
 
-public class PickablesData : ScriptableObject
+public class PickablesDataSo : ScriptableObject
 {
     public float LifePotionSpawnTime;
 }

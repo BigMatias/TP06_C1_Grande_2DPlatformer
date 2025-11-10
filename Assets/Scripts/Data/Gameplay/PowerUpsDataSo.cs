@@ -2,7 +2,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "PowerUpsSettings", menuName = "PowerUps/Data")]
 
-public class PowerUpsData : ScriptableObject
+public class PowerUpsDataSo : ScriptableObject
 {
     public int healthAmount;
     public int invulnerabilityDuration;
