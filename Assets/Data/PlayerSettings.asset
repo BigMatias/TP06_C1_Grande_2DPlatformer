@@ -21,9 +21,11 @@ MonoBehaviour:
   uppercutAttackConnected: {fileID: 8300000, guid: 999aad6368f80e145a5b0bd8c13cdf25, type: 3}
   slashCooldown: 0.4
   slashDamage: 1
+  slashCurrentDamage: 1
   slashSize: 0.2
   punchCooldown: 5
   punchDamage: 2
+  punchCurrentDamage: 2
   punchSize: 0.6
   Jump: 32
   Left: 276
@@ -33,8 +35,10 @@ MonoBehaviour:
   PunchAttack: 120
   UppercutAttack: 122
   Speed: 10
-  JumpSpeed: 25000
+  JumpSpeed: 20
   GravityScaleJump: 5
   GravityScaleFall: 8
   GravityScaleDead: 0
   InvulnerabilityAfterHit: 1
+  JumpQuantity: 1
+  healQuantity: 1

@@ -15,9 +15,11 @@ public class PlayerDataSo : ScriptableObject
     [Header("Attacks Config")]
     public float slashCooldown;
     public int slashDamage;
+    public int slashCurrentDamage;
     public float slashSize;
     public float punchCooldown;
     public int punchDamage;
+    public int punchCurrentDamage;
     public float punchSize;
 
     [Header("Controls")]
@@ -36,5 +38,8 @@ public class PlayerDataSo : ScriptableObject
     public float GravityScaleFall;
     public float GravityScaleDead;
     public float InvulnerabilityAfterHit;
+    public int JumpQuantity;
 
+    [Header("PowerUps")]
+    public int healQuantity;
 }

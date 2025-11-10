@@ -138,6 +138,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDataSo: {fileID: 11400000, guid: 15f71547f5628a44fbe0221885151501, type: 2}
+  powerUpsDataSo: {fileID: 11400000, guid: 708bef2f20a74934e95a524abb968034, type: 2}
+  typeOfAttack: 0
+  playerInteractionPowerUps: {fileID: 9050930489169210694, guid: 1fedb76fb3b1c044bb12a789f36a1d71, type: 3}
 --- !u!82 &-1000180206527835149
 AudioSource:
   m_ObjectHideFlags: 0

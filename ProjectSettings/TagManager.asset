@@ -15,14 +15,14 @@ TagManager:
   - Floor
   - Player
   - Enemy
-  - SlashAttack
-  - PunchAttack
+  - 
+  - 
   - Coin
   - Door
   - MiniMap
   - FallDeadPoint
-  - EnemyVision
-  - 
+  - PowerUps
+  - PlayerInvulnerable
   - 
   - 
   - 

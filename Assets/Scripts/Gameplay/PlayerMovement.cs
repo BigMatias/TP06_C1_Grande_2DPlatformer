@@ -15,9 +15,9 @@ public class PlayerMovement : MonoBehaviour
     private float groundRadius = 0.2f;
 
     public static event Action onPlayerDied;
+    public static event Action<float, int> onPlayerPunch;
 
     private Rigidbody2D rb;
-    private BoxCollider2D playerCollider;
     private HealthSystem healthSystem;
     private AudioSource audioSource;
     private Animator animator;
@@ -29,6 +29,12 @@ public class PlayerMovement : MonoBehaviour
     private bool wasHit;
     private bool isInvulnerable;
 
+    private int jumpQuantity;
+    private int jumpsLeft;
+
+    private Coroutine powerUpPickedUp;
+
+    // Keys / Locks
     private bool keyBluePickedUp = false;
     private bool keyRedPickedUp = false;
     private bool keyGreenPickedUp = false;
@@ -42,8 +48,6 @@ public class PlayerMovement : MonoBehaviour
     public static event Action onLockGreenOpened;
     public static event Action onLockYellowOpened;
     public static event Action onAllLocksOpened;
-
-    private int enemyLayerMask = 1 << (int)LayersEnum.Layers.Enemy;
 
     [SerializeField] private LayerMask groundLayer;
 
@@ -74,20 +78,26 @@ public class PlayerMovement : MonoBehaviour
         KeyGreen.onKeyGreenPickedUp += KeyGreen_onKeyGreenPickedUp;
         KeyRed.onKeyRedPickedUp += KeyRed_onKeyRedPickedUp;
 
+        PlayerInteractionPowerUps.onPowerUpPickedUp += PlayerInteractionPowerUps_onPowerUpPickedUp;
+
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.onDie += HealthSystem_onDie;
+        EnemyController.onPlayerHit += EnemyController_onPlayerHit;
+
         rb = GetComponent<Rigidbody2D>();
-        playerCollider = GetComponent<BoxCollider2D>();
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         attacks = new GameObject[2];
     }
 
+
+
     private void Start()
     {
         animator.SetInteger(State, (int)playerState);
         rb.gravityScale = playerDataSo.GravityScaleJump;
+        jumpQuantity = playerDataSo.JumpQuantity;
         InstantiateAttacks();
     }
 
@@ -125,7 +135,12 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetInteger(State, (int)playerState);
             }
         }
-
+        if (IsGrounded())//&& groundTime <= 0.1)
+        {
+            Debug.Log(jumpsLeft);
+            jumpsLeft = jumpQuantity;
+        }
+        Jump();
     }
 
     private void FixedUpdate()
@@ -136,8 +151,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
-
     private void OnDestroy()
     {
         KeyYellow.onKeyYellowPickedUp -= KeyYellow_onKeyYellowPickedUp;
@@ -145,12 +158,45 @@ public class PlayerMovement : MonoBehaviour
         KeyGreen.onKeyGreenPickedUp -= KeyGreen_onKeyGreenPickedUp;
         KeyRed.onKeyRedPickedUp -= KeyRed_onKeyRedPickedUp;
 
+        EnemyController.onPlayerHit -= EnemyController_onPlayerHit;
+        PlayerInteractionPowerUps.onPowerUpPickedUp -= PlayerInteractionPowerUps_onPowerUpPickedUp;
         healthSystem.onDie -= HealthSystem_onDie;
     }
 
+    private void OnDisable()
+    {
+        if (powerUpPickedUp != null)
+        {
+            StopCoroutine(powerUpPickedUp);
+            powerUpPickedUp = null;
+        }
+    }
+
+    private void HealthSystem_onDie()
+    {
+        audioSource.PlayOneShot(playerDeadAudio);
+        onPlayerDied?.Invoke();
+    }
+
+    private void EnemyController_onPlayerHit(Transform enemyTransform)
+    {
+        StartCoroutine(WasHit(enemyTransform));
+    }
+    private void PlayerInteractionPowerUps_onPowerUpPickedUp(int id, float cooldownTime)
+    {
+        switch (id)
+        {
+            case (int)PlayerActionType.TripleJump:
+                int tripleJump = (int)PlayerActionType.TripleJump;
+                powerUpPickedUp = StartCoroutine(PowerUpPickedUp(tripleJump, cooldownTime));
+                break;
+        }
+    }
+
+
     private void KeyYellow_onKeyYellowPickedUp()
     {
-       keyYellowPickedUp = true;
+        keyYellowPickedUp = true;
     }
 
     private void KeyBlue_onKeyBluePickedUp()
@@ -167,12 +213,24 @@ public class PlayerMovement : MonoBehaviour
         keyRedPickedUp = true;
     }
 
+
     private void InstantiateAttacks()
     {
         for (int i = 0; i <= attacks.Length - 1; i++)
         {
             attacks[i] = Instantiate(playerDataSo.playerAttacks[i], transform.Find("Attacks"));
             attacks[i].SetActive(false);
+        }
+    }
+
+    private void Jump()
+    {
+        if (Input.GetKeyDown(playerDataSo.Jump) && jumpsLeft > 0)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
+            rb.velocity += Vector2.up * playerDataSo.JumpSpeed;
+            audioSource.PlayOneShot(playerJumpAudio);
+            jumpsLeft--;
         }
     }
 
@@ -229,12 +287,7 @@ public class PlayerMovement : MonoBehaviour
             velocity.x = 0f;
         }
 
-        if (Input.GetKey(playerDataSo.Jump) && IsGrounded())
-        {
-            audioSource.PlayOneShot(playerJumpAudio);
-            rb.gravityScale = playerDataSo.GravityScaleJump;
-            rb.AddForce(playerDataSo.JumpSpeed * Time.fixedDeltaTime * Vector2.up);
-        }
+
 
         rb.velocity = velocity;
     }
@@ -282,6 +335,7 @@ public class PlayerMovement : MonoBehaviour
                 attacks[1].transform.position = transform.position + new Vector3(-2, 0, 0);
                 attacks[1].transform.localScale = new Vector3(-playerDataSo.punchSize, playerDataSo.punchSize, playerDataSo.punchSize);
             }
+            onPlayerPunch?.Invoke(playerDataSo.punchCooldown, (int)PlayerActionType.Punch);
             StartCoroutine(AttackCooldown("Punch", playerDataSo.punchCooldown));
         }
     }
@@ -302,11 +356,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void HealthSystem_onDie()
-    {
-        audioSource.PlayOneShot(playerDeadAudio);
-        onPlayerDied?.Invoke();
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -349,29 +398,31 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == (int)LayersEnum.Layers.Door)
+        if (collision.gameObject.layer == (int)Layers.Door)
         {
             if (doorOpened)
             {
-                onFinishedGame?.Invoke(); 
+                onFinishedGame?.Invoke();
             }
         }
-        if (collision.gameObject.layer == (int)LayersEnum.Layers.FallDeadPoint)
+        if (collision.gameObject.layer == (int)Layers.FallDeadPoint)
         {
-            onPlayerDied?.Invoke(); 
+            onPlayerDied?.Invoke();
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+
+    private IEnumerator PowerUpPickedUp(int powerUp, float duration)
     {
-        if (collision.IsTouching(playerCollider))
+        switch (powerUp)
         {
-            if (collision.gameObject.layer == (int)LayersEnum.Layers.Enemy)
-            {
-                Transform enemyTransform = collision.gameObject.GetComponent<Transform>();
-                StartCoroutine(WasHit(enemyTransform));
-            }
+            case (int)PlayerActionType.TripleJump:
+                jumpQuantity = 2;
+                yield return new WaitForSeconds(duration);
+                jumpQuantity = 1;
+                break;
         }
+
     }
 
     private IEnumerator WasHit(Transform enemyTransform)
@@ -382,23 +433,19 @@ public class PlayerMovement : MonoBehaviour
         isInvulnerable = true;
         float direction = (transform.position.x - enemyTransform.position.x) >= 0 ? 1f : -1f;
         rb.velocity = Vector2.zero;
-        float knockbackForceX = 8f; 
-        float knockbackForceY = 7f;  
+        float knockbackForceX = 8f;
+        float knockbackForceY = 7f;
         Vector2 knockbackDir = new Vector2(direction * knockbackForceX, knockbackForceY);
 
         rb.AddForce(knockbackDir, ForceMode2D.Impulse);
         playerState = PlayerState.Hit;
         animator.SetInteger(State, (int)playerState);
-        rb.excludeLayers = enemyLayerMask;
+        gameObject.layer = (int)Layers.PlayerInvulnerable;
         yield return new WaitForSeconds(0.3f);
         wasHit = false;
         yield return new WaitForSeconds(playerDataSo.InvulnerabilityAfterHit);
         isInvulnerable = false;
-        rb.excludeLayers = (int)LayersEnum.Layers.Nothing;
-        
+        gameObject.layer = (int)Layers.Player;
+
     }
-
-
-
-
 }

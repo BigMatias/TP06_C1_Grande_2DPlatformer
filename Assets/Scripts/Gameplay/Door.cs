@@ -28,7 +28,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == (int)LayersEnum.Layers.Player && doorOpened)
+        if (collision.gameObject.layer == (int)Layers.Player && doorOpened)
         {
             onGameFinished?.Invoke();
         }

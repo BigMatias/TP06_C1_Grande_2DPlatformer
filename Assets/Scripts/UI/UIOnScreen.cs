@@ -8,6 +8,7 @@ public class UIOnScreen : MonoBehaviour
     [SerializeField] private Image[] empyHearts;
     [SerializeField] private Image[] keys;
     [SerializeField] private TextMeshProUGUI coinCounterText;
+    [SerializeField] private HealthSystem playerHealthSystem;
 
     private int coinCounter;
 
@@ -19,7 +20,7 @@ public class UIOnScreen : MonoBehaviour
         KeyGreen.onKeyGreenPickedUp += KeyGreen_onKeyGreenPickedUp;
         KeyRed.onKeyRedPickedUp += KeyRed_onKeyRedPickedUp;
         Coin.onCoinPickedUp += Coin_onCoinPickedUp;
-        EnemyController.onPlayerHit += EnemyController_onPlayerHit;
+        playerHealthSystem.onLifeUpdated += PlayerHealthSystem_onLifeUpdated;
     }
 
     void Start()
@@ -40,7 +41,7 @@ public class UIOnScreen : MonoBehaviour
         KeyGreen.onKeyGreenPickedUp -= KeyGreen_onKeyGreenPickedUp;
         KeyRed.onKeyRedPickedUp -= KeyRed_onKeyRedPickedUp;
         Coin.onCoinPickedUp -= Coin_onCoinPickedUp;
-        EnemyController.onPlayerHit -= EnemyController_onPlayerHit;
+        playerHealthSystem.onLifeUpdated -= PlayerHealthSystem_onLifeUpdated;
     }
 
     private void Hill_onKeyBought()
@@ -74,15 +75,19 @@ public class UIOnScreen : MonoBehaviour
         coinCounterText.text = coinCounter.ToString();
     }
 
-    private void EnemyController_onPlayerHit()
+    private void PlayerHealthSystem_onLifeUpdated(int life, int maxLife)
     {
         for (int i = 0; i <= fullHearts.Length - 1; i++)
         {
-            if (fullHearts[i].gameObject.activeSelf)
+            if (i + 1 <= life)
             {
-                fullHearts[i].gameObject.SetActive(false);
+                empyHearts[i].gameObject.SetActive(false);
+                fullHearts[i].gameObject.SetActive(true);
+            }
+            else if (i + 1 > life)
+            {
                 empyHearts[i].gameObject.SetActive(true);
-                break;
+                fullHearts[i].gameObject.SetActive(false);
             }
         }
     }

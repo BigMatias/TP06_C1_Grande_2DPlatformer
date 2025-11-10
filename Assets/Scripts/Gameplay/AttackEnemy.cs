@@ -3,36 +3,42 @@ using UnityEngine;
 public class AttackEnemy : MonoBehaviour
 {
     [SerializeField] private PlayerDataSo playerDataSo;
+    [SerializeField] private PowerUpsData powerUpsDataSo;
+    [SerializeField] private TypeOfAttack typeOfAttack;
+
+    private enum TypeOfAttack
+    {
+        Slash,
+        Punch
+    }
 
     private AudioSource audioSource;
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();    
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == (int)LayersEnum.Layers.Enemy)
+        if (other.gameObject.layer == (int)Layers.Enemy)
         {
-            if (gameObject.layer == (int)LayersEnum.Layers.SlashAttack)
+            if (typeOfAttack == TypeOfAttack.Slash)
             {
                 audioSource.PlayOneShot(playerDataSo.slashAttackConnected);
                 if (other.TryGetComponent(out HealthSystem healthSystem))
                 {
-                    Debug.Log("Slashed");
-                    healthSystem.DoDamage(playerDataSo.slashDamage);
+                    healthSystem.DoDamage(playerDataSo.slashCurrentDamage);
                 }
             }
-            if (gameObject.layer == (int)LayersEnum.Layers.PunchAttack)
+            if (typeOfAttack == TypeOfAttack.Punch)
             {
                 audioSource.PlayOneShot(playerDataSo.punchAttackConnected);
                 if (other.TryGetComponent(out HealthSystem healthSystem))
                 {
-                    Debug.Log("Punched");
-                    healthSystem.DoDamage(playerDataSo.punchDamage);
+                    healthSystem.DoDamage(playerDataSo.punchCurrentDamage);
                 }
             }
-        }   
+        }
     }
 }

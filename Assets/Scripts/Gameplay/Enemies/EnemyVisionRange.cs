@@ -7,12 +7,12 @@ public class EnemyVisionRange : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == (int)LayersEnum.Layers.Player)
+        if (collision.gameObject.layer == (int)Layers.Player)
             onPlayerSighted?.Invoke(true);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == (int)LayersEnum.Layers.Player)
+        if (collision.gameObject.layer == (int)Layers.Player)
             onPlayerSighted?.Invoke(false);
     }
 }

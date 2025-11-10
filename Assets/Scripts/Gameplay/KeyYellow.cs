@@ -7,7 +7,7 @@ public class KeyYellow : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == (int)LayersEnum.Layers.Player)
+        if (collision.gameObject.layer == (int)Layers.Player)
         {
             onKeyYellowPickedUp?.Invoke();
             gameObject.SetActive(false);

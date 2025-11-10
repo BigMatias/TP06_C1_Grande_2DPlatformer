@@ -27,7 +27,6 @@ public class HealthSystem : MonoBehaviour
     {
         if (damage < 0)
         {
-            Debug.Log("Se cura en la funcion de daño");
             return;
         }
 
@@ -36,6 +35,7 @@ public class HealthSystem : MonoBehaviour
         if (life <= 0)
         {
             life = 0;
+            onLifeUpdated?.Invoke(life, maxLife);
             onDie?.Invoke();
         }
         else

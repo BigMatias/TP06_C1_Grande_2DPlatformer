@@ -14,7 +14,7 @@ public class Coin : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.layer == (int)LayersEnum.Layers.Player)
+        if (other.gameObject.layer == (int)Layers.Player || other.gameObject.layer == (int)Layers.PlayerInvulnerable)
         {
             playerPrefsSo.playerCoins += 1;
             playerPrefsSo.currentCoins += 1;
