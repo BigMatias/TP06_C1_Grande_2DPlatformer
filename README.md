@@ -1,9 +1,9 @@
 # TP06_C1_Grande_2DPlatformer
 
-## Itch.io
+### Itch.io
 https://bigmatthew.itch.io/adventurenaut
 
-## Game details
+### Game details
 Collect the 4 keys and open the door to finish the game.
 
 ### How to play 
@@ -12,10 +12,10 @@ Collect the 4 keys and open the door to finish the game.
 * X: Special attack
 * Space: Jump
 
-## By
+### By
 Matías Grande
 
-## Credits
+### Credits
 **Kenney New Platformer Pack**
 **Violet Theme UI**
 **Free Game Items**
