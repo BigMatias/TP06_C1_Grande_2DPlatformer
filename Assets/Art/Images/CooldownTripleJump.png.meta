@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CooldownTripleJump_0: 3929183852110128720
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
